@@ -43,6 +43,8 @@ angular.module('bw.paging', []).directive('paging', function () {
             disabled: '@',
             dots: '@',
             ulClass: '@',
+            liClass: '@',
+            aClass: '@',
             activeClass: '@',
             disabledClass: '@',
             adjacent: '@',
@@ -94,12 +96,12 @@ angular.module('bw.paging', []).directive('paging', function () {
                 '<li ' +
                     'title="{{Item.title}}" ' +
                     'data-ng-class="Item.liClass" ' +
-                    'data-ng-repeat="Item in List"> ' +
+                    'data-ng-repeat="Item in List" class="'+attrs.liClass+'"> ' +
                         '<a ' + 
                             (attrs.pgHref ? 'data-ng-href="{{Item.pgHref}}" ' : 'href ') +
                             'data-ng-class="Item.aClass" ' +
                             'data-ng-click="Item.action()" ' +
-                            'data-ng-bind="Item.value">'+ 
+                            'data-ng-bind="Item.value" class="'+attrs.aClass+'">'+ 
                         '</a> ' +
                 '</li>' +
             '</ul>' 
